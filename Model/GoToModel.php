@@ -345,11 +345,14 @@ class GoToModel extends FormModel
             $citrixProductRepository = $this->getProductRepository();
             foreach ($contactsToAdd as $email => $info) {
                 if (!isset($leads[strtolower($email)])) {
+/*
                     $lead = (new Lead())
                         ->addUpdatedField('email', $info['email'])
                         ->addUpdatedField('firstname', $info['firstname'])
                         ->addUpdatedField('lastname', $info['lastname']);
                     $this->leadModel->saveEntity($lead);
+*/
+                    continue;
 
                     $leads[strtolower($email)] = $lead;
                 }
